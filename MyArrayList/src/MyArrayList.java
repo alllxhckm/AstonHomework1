@@ -49,6 +49,9 @@ public class MyArrayList<T extends Comparable<T>>{
     }
 
     public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
         for (int i = index; i < size; i++) {
             list[i] = list[i + 1];
         }
